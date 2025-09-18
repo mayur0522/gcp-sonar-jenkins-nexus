@@ -13,3 +13,17 @@ resource "google_compute_firewall" "sonar-server-fw" {
   source_ranges = ["0.0.0.0/0"]
 }
 
+# jenkins-server
+resource "google_compute_firewall" "jenkins-server-fw" {
+  name    = "jenkins-server-fw"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["8080"]
+  }
+
+  target_tags = ["jenkins"]
+
+  source_ranges = ["0.0.0.0/0"]
+}
