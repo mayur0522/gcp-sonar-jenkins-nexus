@@ -1,7 +1,7 @@
 resource "google_compute_instance" "sonar-server" {
   name         = "sonar-server"
-  machine_type = "e2-standard-2" # Similar to t3.medium
-  zone         = "${var.region}-c" # Similar to ap-south-1c
+  machine_type = "e2-standard-2" 
+  zone         = "${var.region}-c" 
   
 
 
