@@ -8,8 +8,7 @@ resource "google_compute_instance" "jenkins_server" {
   name         = "jenkins-server"
   machine_type = "e2-medium"
   zone         = "${var.region}-a"
-  allow_stopping_for_update = true // Add this line
-
+  
   boot_disk {
     initialize_params {
       image = data.google_compute_image.ubuntu_2204.self_link
